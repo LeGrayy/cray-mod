@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "cray-mod",
+	"version": "${version}",
+	"name": "cray mod",
+	"description": "Hypixel Skyblock Mod with a few QoL features",
+	"authors": [
+		"GrayCray"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cray-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.craymod.CrayMod",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.craymod.client.CrayModClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"cray-mod.mixins.json",
+		{
+			"config": "cray-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
